@@ -13,8 +13,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let button = AwesomeButton(type: .InfoDark)
-        print(button)
     }
 
     override func didReceiveMemoryWarning() {
