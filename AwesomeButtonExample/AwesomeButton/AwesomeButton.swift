@@ -108,7 +108,7 @@ private extension AwesomeButton {
         //  start with left image position
         let attachment = NSTextAttachment()
         attachment.image = images.0
-        attachment.bounds = CGRectMake(0, 0, images.0.size.width, images.0.size.height)
+        attachment.bounds = CGRectMake(0, -7, images.0.size.width, images.0.size.height)
         let attachmentString = NSAttributedString(attachment: attachment)
         finalString = NSMutableAttributedString(attributedString: attachmentString)
         finalString.appendAttributedString(string)
