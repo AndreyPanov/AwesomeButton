@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum ImagePosition {
+public enum ImagePosition {
     case Left, Center, Right, None
 }
 
@@ -25,21 +25,23 @@ struct ButtonStyles {
 public class AwesomeButton: UIButton {
     
     private var title: String?
-    private var icon: UIImage?
-    private var positionImage: ImagePosition?
-    private var textSize: CGFloat? {
+    private var images: (UIImage, UIImage, UIImage, ImagePosition)?
+    private var fontName: UIFont? {
         didSet {  }
     }
     @IBInspectable
     public var cornerRadius: CGFloat = 0 {
         didSet { layer.cornerRadius = cornerRadius }
     }
+    @IBInspectable
     public var borderWidth: CGFloat = 0 {
         didSet { layer.borderWidth = borderWidth }
     }
+    @IBInspectable
     public var borderColor: UIColor? {
         didSet { layer.borderColor = borderColor?.CGColor }
     }
+    @IBInspectable
     public var masksToBound: Bool = true {
         didSet { layer.masksToBounds = masksToBound }
     }
@@ -62,27 +64,61 @@ public class AwesomeButton: UIButton {
 */
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        postInit()
+        //postInit()
     }
     
-    func setImage(image:UIImage, highlitedImage: UIImage? = nil, selectedImage: UIImage? = nil, imagePosition: ImagePosition = .None) {
+    public func setImages(normalImage normalImage:UIImage, highlitedImage: UIImage, selectedImage: UIImage, imagePosition: ImagePosition = .None) {
         
+        self.images = (normalImage, highlitedImage, selectedImage, imagePosition)
     }
-    /*
-    func setTitle(title: String, textSize: CGFloat, icon: UIImage, positionIcon: IconPosition) {
+    
+    public func setTitle(title title: String, font: UIFont) {
         
-        self.icon = icon
-        self.positionIcon = positionIcon
         self.title = title
-        self.textSize = textSize
+        self.fontName = font
+    }
+    
+    public func setupIT() {
         setup()
     }
-    */
-    private func setup() {
+}
+
+private extension AwesomeButton {
+    
+    func setup() {
         
+        if let imagesUnwrapped = images {
+            
+            if let titleUnwrapped = title {
+                let string = NSAttributedString(string: titleUnwrapped, attributes: nil)
+                createAttributedImageString(string, images: imagesUnwrapped)
+                //some func
+            } else {
+                setImage(imagesUnwrapped.0, forState: .Normal)
+                setImage(imagesUnwrapped.1, forState: .Highlighted)
+                setImage(imagesUnwrapped.2, forState: .Selected)
+            }
+        }
     }
     
-    private func postInit() {
+    func createAttributedImageString(string: NSAttributedString, images: (UIImage, UIImage, UIImage, ImagePosition)) {
+        
+        let finalString: NSMutableAttributedString
+        
+        //  start with left image position
+        let attachment = NSTextAttachment()
+        attachment.image = images.0
+        attachment.bounds = CGRectMake(0, 0, images.0.size.width, images.0.size.height)
+        let attachmentString = NSAttributedString(attachment: attachment)
+        finalString = NSMutableAttributedString(attributedString: attachmentString)
+        finalString.appendAttributedString(string)
+        setAttributedTitle(finalString, forState: .Normal)
+        
+        setNeedsLayout()
+        layoutIfNeeded()
+    }
+    
+    func postInit() {
         self.translatesAutoresizingMaskIntoConstraints = false;
         self.setContentCompressionResistancePriority(1000, forAxis: .Horizontal)
         self.setContentCompressionResistancePriority(1000, forAxis: .Vertical)

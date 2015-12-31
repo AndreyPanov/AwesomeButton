@@ -11,8 +11,13 @@ import AwesomeButton
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var awesomeButton: AwesomeButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        awesomeButton.setImages(normalImage: UIImage(named: "arrowNextDark")!, highlitedImage: UIImage(named: "arrowNext")!, selectedImage: UIImage(named: "arrowNext")!, imagePosition: .Left)
+        awesomeButton.setTitle(title: "Hello", font: UIFont.systemFontOfSize(15.0))
+        awesomeButton.setupIT()
     }
 
     override func didReceiveMemoryWarning() {
