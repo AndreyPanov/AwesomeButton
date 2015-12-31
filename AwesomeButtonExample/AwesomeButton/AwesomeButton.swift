@@ -29,6 +29,7 @@ public class AwesomeButton: UIButton {
     private var fontName: UIFont? {
         didSet {  }
     }
+    private var imageOffsetY: CGFloat = 0
     @IBInspectable
     public var cornerRadius: CGFloat = 0 {
         didSet { layer.cornerRadius = cornerRadius }
@@ -90,7 +91,7 @@ private extension AwesomeButton {
         if let imagesUnwrapped = images {
             
             if let titleUnwrapped = title {
-                let string = NSAttributedString(string: titleUnwrapped, attributes: nil)
+                let string = NSAttributedString(string: titleUnwrapped, attributes: [NSFontAttributeName : fontName!])
                 createAttributedImageString(string, images: imagesUnwrapped)
                 //some func
             } else {
@@ -113,16 +114,52 @@ private extension AwesomeButton {
         finalString = NSMutableAttributedString(attributedString: attachmentString)
         finalString.appendAttributedString(string)
         setAttributedTitle(finalString, forState: .Normal)
-        
-        setNeedsLayout()
-        layoutIfNeeded()
     }
     
+    // need it?
     func postInit() {
+        
         self.translatesAutoresizingMaskIntoConstraints = false;
         self.setContentCompressionResistancePriority(1000, forAxis: .Horizontal)
         self.setContentCompressionResistancePriority(1000, forAxis: .Vertical)
         self.setContentHuggingPriority(1000, forAxis: .Horizontal)
         self.setContentHuggingPriority(1000, forAxis: .Vertical)
+    }
+    
+    // где-то нужно еще делить на 2
+    func calculateOffsetYForState(state: UIControlState) -> CGFloat {
+        
+        guard let fontNameUnwrapped = fontName else { return 0.0 }
+        let imageHeight = imageHeightForState(state)
+        if imageHeight == 0.0 { return 0.0 }
+        
+        let titleAndFontSizeDiff = titleLabel!.frame.size.height - fontNameUnwrapped.pointSize
+        print(titleAndFontSizeDiff)
+        
+        imageOffsetY = (-1 * (((fontNameUnwrapped.pointSize + (titleAndFontSizeDiff / 2)) - imageHeight) / 2)) - titleAndFontSizeDiff / 2 + imageOffsetY
+        
+        if fontNameUnwrapped.pointSize > imageHeight {
+            
+            imageOffsetY = fontNameUnwrapped.pointSize - imageHeight
+        }
+        return imageOffsetY
+    }
+    
+    func imageHeightForState(state: UIControlState) -> CGFloat {
+        
+        guard let imagesUnwrapped = images else { return 0.0 }
+        
+        let imageHeight: CGFloat
+        switch (state) {
+        case UIControlState.Normal:
+            imageHeight = imagesUnwrapped.0.size.height
+        case UIControlState.Highlighted:
+            imageHeight = imagesUnwrapped.1.size.height
+        case UIControlState.Selected:
+            imageHeight = imagesUnwrapped.2.size.height
+        default:
+            imageHeight = 0.0
+        }
+        return imageHeight
     }
 }
