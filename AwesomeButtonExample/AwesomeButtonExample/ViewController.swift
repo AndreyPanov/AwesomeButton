@@ -15,13 +15,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //awesomeButton.setImages(normalImage: UIImage(named: "arrowNextDark")!, highlitedImage: UIImage(named: "arrowNext")!, selectedImage: UIImage(named: "arrowNext")!, imagePosition: .Left)
-        //awesomeButton.setTitle(title: "Long long sentence", font: UIFont.systemFontOfSize(15.0))
-        //awesomeButton.setupIT()
-        
-        print(awesomeButton.titleForState(.Normal))
-        print(awesomeButton.titleForState(.Highlighted))
-        print(awesomeButton.titleForState(.Selected))
     }
 
     override func didReceiveMemoryWarning() {

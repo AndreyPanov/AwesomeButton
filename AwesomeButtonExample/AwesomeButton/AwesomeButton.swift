@@ -69,27 +69,32 @@ private extension AwesomeButton {
         guard let iconUnwrapped = icon else { return }
         
         let finalString: NSMutableAttributedString
-        
+        let attrString = getAttributedStringForState(iconState)
         //  start with left image position
         let attachment = NSTextAttachment()
         attachment.image = iconUnwrapped
-        attachment.bounds = CGRectMake(0, -7, iconUnwrapped.size.width, iconUnwrapped.size.height)
+        attachment.bounds = CGRectMake(0, calculateOffsetYForState(iconState, fontSize: attrString.fontSize()), iconUnwrapped.size.width, iconUnwrapped.size.height)
         let attachmentString = NSAttributedString(attachment: attachment)
         finalString = NSMutableAttributedString(attributedString: attachmentString)
-        finalString.appendAttributedString(getAttributedStringForState(iconState))
+        finalString.appendAttributedString(attrString)
         setAttributedTitle(finalString, forState: iconState)
     }
     
     func getAttributedStringForState(buttonState: UIControlState) -> NSAttributedString {
+        ///print(buttonState.rawValue)
+        //print(attributedTitleForState(buttonState)?.string)
+        //print(titleForState(buttonState))
+        print("--------------")
         
-        if  let attributedTitleUnwrapped = attributedTitleForState(buttonState) {
-            
-            return NSAttributedString(string: attributedTitleUnwrapped.string, attributes: attributedTitleUnwrapped.fontAttributes())
-        }
-        else if let titleUnwrapped = titleForState(buttonState) {
+        // order of if--else statement is important here
+        if let titleUnwrapped = titleForState(buttonState) {
             
             let attributedString = NSAttributedString(string: titleUnwrapped, attributes: [NSFontAttributeName : titleLabel!.font])
             return attributedString
+        }
+        else if  let attributedTitleUnwrapped = attributedTitleForState(buttonState) {
+            
+            return NSAttributedString(string: attributedTitleUnwrapped.string, attributes: attributedTitleUnwrapped.fontAttributes())
         }
         
         return NSAttributedString(string: "")
@@ -109,7 +114,26 @@ private extension AwesomeButton {
         }
     }
     
-    
+    func calculateOffsetYForState(state: UIControlState, fontSize: CGFloat) -> CGFloat {
+        
+        //let imageOffsetY = -1 *
+        
+        guard let imageHeight = getImageForState(state)?.size.height else { return 0.0 }
+        
+        //let titleAndFontSizeDiff = titleLabel!.frame.size.height - fontNameUnwrapped.pointSize
+        //print(titleAndFontSizeDiff)
+        
+        let imageOffsetY = -1 * (fontSize - imageHeight) / 2
+        print(fontSize)
+        print(imageOffsetY)
+        return imageOffsetY
+        /*
+        if fontNameUnwrapped.pointSize > imageHeight {
+            
+            imageOffsetY = fontNameUnwrapped.pointSize - imageHeight
+        }
+        return imageOffsetY*/
+    }
 }
 
 extension NSAttributedString {
@@ -121,6 +145,13 @@ extension NSAttributedString {
             return [NSFontAttributeName : font]
         }
         return [:]
+    }
+    
+    func fontSize() -> CGFloat {
+        if let fontSize = (self.fontAttributes()[NSFontAttributeName])?.fontSize {
+            return fontSize
+        }
+        return 0.0
     }
 }
 
