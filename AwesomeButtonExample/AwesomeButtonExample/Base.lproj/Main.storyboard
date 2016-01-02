@@ -17,37 +17,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ier-pC-9Kn" customClass="AwesomeButton" customModule="AwesomeButton">
-                                <rect key="frame" x="240" y="285" width="120" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.29411764709999999" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Bok-UW-HnA"/>
-                                    <constraint firstAttribute="width" constant="120" id="y5q-67-ae3"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfA-Bf-0Kt" customClass="AwesomeButton" customModule="AwesomeButton">
+                                <rect key="frame" x="20" y="28" width="210" height="46"/>
+                                <color key="backgroundColor" red="1" green="0.3803921569" blue="0.38823529410000002" alpha="0.24463900862068966" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.331928104" green="1" blue="0.72543465149999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="4"/>
+                                        <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
+                                        <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.3803921569" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfLines">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconPosition">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconNormal" value="arrowNextDark"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconHighlighted" value="arrowNext"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="arrowNext"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pda-lx-4cn" customClass="AwesomeButton" customModule="AwesomeButton">
+                                <rect key="frame" x="114" y="128" width="158" height="54"/>
+                                <color key="backgroundColor" red="1" green="0.3803921569" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.23764049449999999" green="1" blue="0.1023674851" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="29"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconNormal" value="arrowNextDark"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconHighlighted" value="arrowNext"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="arrowNext"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Ier-pC-9Kn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dao-nk-nG8"/>
-                            <constraint firstItem="Ier-pC-9Kn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yYF-oS-Sz5"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="awesomeButton" destination="Ier-pC-9Kn" id="5c0-rd-m0s"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="240" y="418"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrowNext" width="24" height="24"/>
+        <image name="arrowNextDark" width="24" height="24"/>
+    </resources>
 </document>

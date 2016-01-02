@@ -439,6 +439,7 @@
 				D5915E231C2EAFA4002716BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5915E361C2EBADA002716BA /* Build configuration list for PBXNativeTarget "AwesomeButton" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +448,7 @@
 				D5915E381C2EBADA002716BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
