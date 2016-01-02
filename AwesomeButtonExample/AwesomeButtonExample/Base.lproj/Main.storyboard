@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,13 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfA-Bf-0Kt" customClass="AwesomeButton" customModule="AwesomeButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfA-Bf-0Kt" customClass="AwesomeButton" customModule="AwesomeButton">
                                 <rect key="frame" x="20" y="28" width="210" height="46"/>
                                 <color key="backgroundColor" red="1" green="0.3803921569" blue="0.38823529410000002" alpha="0.24463900862068966" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="a3U-u1-OH3"/>
+                                    <constraint firstAttribute="width" constant="210" id="kqt-hE-SJl"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <state key="normal">
+                                <state key="normal" title="верх normal">
                                     <color key="titleColor" red="0.331928104" green="1" blue="0.72543465149999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="selected" title="верх selected"/>
+                                <state key="highlighted" title="верх high"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="25"/>
@@ -37,18 +44,22 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfLines">
                                         <integer key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="iconPosition">
-                                        <integer key="value" value="0"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="image" keyPath="iconNormal" value="arrowNextDark"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="iconHighlighted" value="arrowNext"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="arrowNext"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pda-lx-4cn" customClass="AwesomeButton" customModule="AwesomeButton">
-                                <rect key="frame" x="114" y="128" width="158" height="54"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pda-lx-4cn" customClass="AwesomeButton" customModule="AwesomeButton">
+                                <rect key="frame" x="20" y="109" width="158" height="54"/>
                                 <color key="backgroundColor" red="1" green="0.3803921569" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="FE1-RD-Cy2"/>
+                                    <constraint firstAttribute="width" constant="158" id="MGj-uI-reN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Авторизоваться"/>
+                                <state key="selected" title="Выйти"/>
+                                <state key="highlighted" title="Войти"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" red="0.23764049449999999" green="1" blue="0.1023674851" alpha="1" colorSpace="calibratedRGB"/>
@@ -66,7 +77,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pda-lx-4cn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="26Q-5i-dBQ"/>
+                            <constraint firstItem="kfA-Bf-0Kt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="OSA-Pn-GC6"/>
+                            <constraint firstItem="Pda-lx-4cn" firstAttribute="top" secondItem="kfA-Bf-0Kt" secondAttribute="bottom" constant="35" id="Oxq-1Y-gWY"/>
+                            <constraint firstItem="kfA-Bf-0Kt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sBG-iv-56S"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="awesomeButton" destination="Pda-lx-4cn" id="iti-Gq-ILx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

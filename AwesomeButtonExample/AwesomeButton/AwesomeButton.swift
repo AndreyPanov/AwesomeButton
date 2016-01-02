@@ -29,13 +29,16 @@ public class AwesomeButton: UIButton {
     
     //MARK: Designable
     @IBInspectable public var iconNormal: UIImage? {
-        didSet { iconConfiguration(iconNormal, iconState: .Normal) }
+        didSet {
+            iconConfiguration(iconNormal, iconState: .Normal) }
     }
     @IBInspectable public var iconHighlighted: UIImage? {
-        didSet { iconConfiguration(iconHighlighted, iconState: .Highlighted) }
+        didSet {
+            iconConfiguration(iconHighlighted, iconState: .Highlighted) }
     }
     @IBInspectable public var iconSelected: UIImage? {
-        didSet { iconConfiguration(iconSelected, iconState: .Selected) }
+        didSet {
+            iconConfiguration(iconSelected, iconState: .Selected) }
     }
     @IBInspectable public var cornerRadius: CGFloat = 3 {
         didSet {
@@ -80,9 +83,10 @@ private extension AwesomeButton {
     func getAttributedStringForState(buttonState: UIControlState) -> NSAttributedString {
         
         if  let attributedTitleUnwrapped = attributedTitleForState(buttonState) {
-            return attributedTitleUnwrapped
+            
+            return NSAttributedString(string: attributedTitleUnwrapped.string, attributes: attributedTitleUnwrapped.fontAttributes())
         }
-        else if let titleUnwrapped = titleLabel?.text {
+        else if let titleUnwrapped = titleForState(buttonState) {
             
             let attributedString = NSAttributedString(string: titleUnwrapped, attributes: [NSFontAttributeName : titleLabel!.font])
             return attributedString
@@ -103,6 +107,20 @@ private extension AwesomeButton {
         default:
             return nil
         }
+    }
+    
+    
+}
+
+extension NSAttributedString {
+    
+    func fontAttributes() -> [String : AnyObject] {
+        let limitRange = NSMakeRange(0, self.length)
+        if let font = self.attribute(NSFontAttributeName, atIndex: 0, longestEffectiveRange: nil, inRange: limitRange) {
+            
+            return [NSFontAttributeName : font]
+        }
+        return [:]
     }
 }
 
