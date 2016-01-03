@@ -13,29 +13,28 @@ public enum ImagePosition {
 }
 
 struct ButtonStyles {
-    struct Color {
-        
-    }
-    struct Font {
-        
-    }
     
+    struct State {
+        static let normalAlpha = CGFloat(1.0)
+        static let highlighteAlpha = CGFloat(0.7)
+        static let disableAlpha = CGFloat(0.5)
+    }
 }
 @IBDesignable
 public class AwesomeButton: UIButton {
     
     //MARK: Designable
     @IBInspectable public var iconNormal: UIImage? {
-        didSet {
-            iconConfiguration(iconNormal, iconState: .Normal) }
+        
+        didSet { iconConfiguration(iconNormal, iconState: .Normal) }
     }
     @IBInspectable public var iconHighlighted: UIImage? {
-        didSet {
-            iconConfiguration(iconHighlighted, iconState: .Highlighted) }
+        
+        didSet { iconConfiguration(iconHighlighted, iconState: .Highlighted) }
     }
     @IBInspectable public var iconSelected: UIImage? {
-        didSet {
-            iconConfiguration(iconSelected, iconState: .Selected) }
+        
+        didSet { iconConfiguration(iconSelected, iconState: .Selected) }
     }
     @IBInspectable public var cornerRadius: CGFloat = 3 {
         didSet {
@@ -44,9 +43,11 @@ public class AwesomeButton: UIButton {
         }
     }
     @IBInspectable public var borderWidth: CGFloat = 3 {
+        
         didSet { layer.borderWidth = borderWidth }
     }
-    @IBInspectable public var borderColor: UIColor = UIColor.redColor() {
+    @IBInspectable public var borderColor: UIColor = UIColor.lightGrayColor() {
+        
         didSet { layer.borderColor = borderColor.CGColor }
     }
     
@@ -57,6 +58,52 @@ public class AwesomeButton: UIButton {
     }
     public var numberOfLines: Int = 1 {
         didSet { titleLabel?.numberOfLines = numberOfLines }
+    }
+    public override var highlighted: Bool {
+        didSet {
+            if highlighted {
+                backgroundColor = backgroundColor?.colorWithAlphaComponent(ButtonStyles.State.highlighteAlpha)
+            } else {
+                backgroundColor = backgroundColor?.colorWithAlphaComponent(ButtonStyles.State.normalAlpha)
+            }
+        }
+    }
+    public override var selected: Bool {
+        didSet {
+            if selected {
+                backgroundColor = backgroundColor?.colorWithAlphaComponent(ButtonStyles.State.highlighteAlpha)
+            } else {
+                backgroundColor = backgroundColor?.colorWithAlphaComponent(ButtonStyles.State.normalAlpha)
+            }
+        }
+    }
+    public override var enabled: Bool {
+        didSet {
+            if enabled {
+                backgroundColor = backgroundColor?.colorWithAlphaComponent(ButtonStyles.State.normalAlpha)
+            } else {
+                backgroundColor = backgroundColor?.colorWithAlphaComponent(ButtonStyles.State.disableAlpha)
+            }
+        }
+    }
+    public convenience init(type buttonType: UIButtonType = .Custom) {
+        self.init(type: .Custom)
+    }
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        contentVerticalAlignment = .Center
+    }
+    public func buttonWithIcon(icon: UIImage, highlightedImage: UIImage? = nil, selectedImage: UIImage? = nil, iconPosition: ImagePosition = .Left, title: String = "") {
+        setTitle(title, forState: .Normal)
+        self.iconPosition = iconPosition
+        iconNormal = icon
+        if highlightedImage != nil {
+            iconHighlighted = highlightedImage
+        }
+        if selectedImage != nil {
+            iconSelected = selectedImage
+        }
     }
 }
 private extension AwesomeButton {

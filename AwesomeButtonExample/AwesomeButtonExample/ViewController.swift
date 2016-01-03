@@ -12,10 +12,11 @@ import AwesomeButton
 class ViewController: UIViewController {
 
     @IBOutlet weak var awesomeButton: AwesomeButton!
-    @IBOutlet weak var someButton: UIButton!
+    @IBOutlet weak var someButton: AwesomeButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        someButton.buttonWithIcon(UIImage(named: "example-arrow")!, title: "lol")
         /*
         someButton.setAttributedTitle(NSAttributedString(string: "NormaNSTextAttachmentContainerl", attributes: [:]), forState: .Normal)
         someButton.setAttributedTitle(NSAttributedString(string: "High", attributes: [:]), forState: .Highlighted)
