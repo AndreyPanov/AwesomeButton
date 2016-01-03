@@ -12,9 +12,16 @@ import AwesomeButton
 class ViewController: UIViewController {
 
     @IBOutlet weak var awesomeButton: AwesomeButton!
+    @IBOutlet weak var someButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
+        someButton.setAttributedTitle(NSAttributedString(string: "NormaNSTextAttachmentContainerl", attributes: [:]), forState: .Normal)
+        someButton.setAttributedTitle(NSAttributedString(string: "High", attributes: [:]), forState: .Highlighted)
+        print(someButton.attributedTitleForState(.Highlighted))
+        print(someButton.attributedTitleForState(.Selected))
+        */
     }
 
     override func didReceiveMemoryWarning() {

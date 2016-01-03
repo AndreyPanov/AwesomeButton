@@ -8,11 +8,8 @@
 
 import UIKit
 
-public enum ImagePosition: Int {
-    case Left = 0
-    case Center = 1
-    case Right = 2
-    case None = 3
+public enum ImagePosition {
+    case Left, Right
 }
 
 struct ButtonStyles {
@@ -73,7 +70,7 @@ private extension AwesomeButton {
         //  start with left image position
         let attachment = NSTextAttachment()
         attachment.image = iconUnwrapped
-        attachment.bounds = CGRectMake(0, calculateOffsetYForState(iconState, fontSize: attrString.fontSize()), iconUnwrapped.size.width, iconUnwrapped.size.height)
+        attachment.bounds = CGRectIntegral(CGRectMake(0, calculateOffsetYForState(iconState), iconUnwrapped.size.width, iconUnwrapped.size.height))
         let attachmentString = NSAttributedString(attachment: attachment)
         finalString = NSMutableAttributedString(attributedString: attachmentString)
         finalString.appendAttributedString(attrString)
@@ -81,10 +78,6 @@ private extension AwesomeButton {
     }
     
     func getAttributedStringForState(buttonState: UIControlState) -> NSAttributedString {
-        ///print(buttonState.rawValue)
-        //print(attributedTitleForState(buttonState)?.string)
-        //print(titleForState(buttonState))
-        print("--------------")
         
         // order of if--else statement is important here
         if let titleUnwrapped = titleForState(buttonState) {
@@ -114,29 +107,22 @@ private extension AwesomeButton {
         }
     }
     
-    func calculateOffsetYForState(state: UIControlState, fontSize: CGFloat) -> CGFloat {
-        
-        //let imageOffsetY = -1 *
+    func calculateOffsetYForState(state: UIControlState) -> CGFloat {
         
         guard let imageHeight = getImageForState(state)?.size.height else { return 0.0 }
         
-        //let titleAndFontSizeDiff = titleLabel!.frame.size.height - fontNameUnwrapped.pointSize
-        //print(titleAndFontSizeDiff)
-        
-        let imageOffsetY = -1 * (fontSize - imageHeight) / 2
-        print(fontSize)
-        print(imageOffsetY)
-        return imageOffsetY
-        /*
-        if fontNameUnwrapped.pointSize > imageHeight {
-            
-            imageOffsetY = fontNameUnwrapped.pointSize - imageHeight
+        let attr = getAttributedStringForState(state)
+        let imageOffsetY: CGFloat
+        if imageHeight > attr.fontSize() {
+            imageOffsetY = attr.fontOffset() - imageHeight / 2 + attr.mid() + 1
+        } else {
+            imageOffsetY = 0
         }
-        return imageOffsetY*/
+        return imageOffsetY
     }
 }
 
-extension NSAttributedString {
+private extension NSAttributedString {
     
     func fontAttributes() -> [String : AnyObject] {
         let limitRange = NSMakeRange(0, self.length)
@@ -148,10 +134,15 @@ extension NSAttributedString {
     }
     
     func fontSize() -> CGFloat {
-        if let fontSize = (self.fontAttributes()[NSFontAttributeName])?.fontSize {
-            return fontSize
-        }
+        if let fontSize = (self.fontAttributes()[NSFontAttributeName])?.pointSize { return fontSize }
+        return 0.0
+    }
+    func fontOffset() -> CGFloat {
+        if let offset = (self.fontAttributes()[NSFontAttributeName])?.descender { return offset }
+        return 0.0
+    }
+    func mid() -> CGFloat {
+        if let font = (self.fontAttributes()[NSFontAttributeName]) { return font.descender + font.capHeight }
         return 0.0
     }
 }
-
