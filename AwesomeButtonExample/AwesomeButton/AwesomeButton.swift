@@ -65,15 +65,20 @@ private extension AwesomeButton {
         
         guard let iconUnwrapped = icon else { return }
         
-        let finalString: NSMutableAttributedString
+        let finalString = NSMutableAttributedString(string: "")
         let attrString = getAttributedStringForState(iconState)
         //  start with left image position
         let attachment = NSTextAttachment()
         attachment.image = iconUnwrapped
         attachment.bounds = CGRectIntegral(CGRectMake(0, calculateOffsetYForState(iconState), iconUnwrapped.size.width, iconUnwrapped.size.height))
         let attachmentString = NSAttributedString(attachment: attachment)
-        finalString = NSMutableAttributedString(attributedString: attachmentString)
-        finalString.appendAttributedString(attrString)
+        if iconPosition == .Left {
+            finalString.appendAttributedString(attachmentString)
+            finalString.appendAttributedString(attrString)
+        } else if iconPosition == .Right {
+            finalString.appendAttributedString(attrString)
+            finalString.appendAttributedString(attachmentString)
+        }
         setAttributedTitle(finalString, forState: iconState)
     }
     
