@@ -53,8 +53,20 @@ public class AwesomeButton: UIButton {
     
     //MARK public
     
+    @IBInspectable public var iconLeftRightPosition: Int = 0 {
+        didSet {
+            if iconLeftRightPosition == 0 {
+                iconPosition = .Left
+            } else if iconLeftRightPosition == 1 {
+                iconPosition = .Right
+            }
+        }
+    }
+    
     public var iconPosition: ImagePosition = .Left {
-        didSet {  }
+        didSet {
+            //rebuild uiattributedstring
+        }
     }
     public var numberOfLines: Int = 1 {
         didSet { titleLabel?.numberOfLines = numberOfLines }
@@ -86,9 +98,9 @@ public class AwesomeButton: UIButton {
             }
         }
     }
-    public convenience init(type buttonType: UIButtonType = .Custom) {
-        self.init(type: .Custom)
-    }
+    // store design
+    private var iconAttachment: [[NSTextAttachment : UIControlState]] = []
+    private var attributedString: [[NSAttributedString : UIControlState]] = []
     
     public override func awakeFromNib() {
         super.awakeFromNib()
@@ -118,6 +130,8 @@ private extension AwesomeButton {
         let attachment = NSTextAttachment()
         attachment.image = iconUnwrapped
         attachment.bounds = CGRectIntegral(CGRectMake(0, calculateOffsetYForState(iconState), iconUnwrapped.size.width, iconUnwrapped.size.height))
+        iconAttachment.append([attachment : iconState])
+        attributedString.append([attrString : iconState])
         let attachmentString = NSAttributedString(attachment: attachment)
         if iconPosition == .Left {
             finalString.appendAttributedString(attachmentString)
@@ -127,6 +141,22 @@ private extension AwesomeButton {
             finalString.appendAttributedString(attachmentString)
         }
         setAttributedTitle(finalString, forState: iconState)
+    }
+    
+    func switchIconAndTextPosition() {
+        /*
+        iconAttachment.forEach({ dict in
+            if attributedString.filter({ $0 == dict.keys.first })
+            let finalString = NSMutableAttributedString(string: "")
+            if iconPosition == .Left {
+                finalString.appendAttributedString(attachmentString)
+                finalString.appendAttributedString(attrString)
+            } else if iconPosition == .Right {
+                finalString.appendAttributedString(attrString)
+                finalString.appendAttributedString(attachmentString)
+            }
+        })
+        */
     }
     
     func getAttributedStringForState(buttonState: UIControlState) -> NSAttributedString {

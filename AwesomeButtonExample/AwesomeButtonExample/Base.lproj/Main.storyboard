@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,129 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfA-Bf-0Kt" customClass="AwesomeButton" customModule="AwesomeButton">
-                                <rect key="frame" x="20" y="28" width="210" height="46"/>
-                                <color key="backgroundColor" red="1" green="0.3803921569" blue="0.38823529410000002" alpha="0.24463900862068966" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="a3U-u1-OH3"/>
-                                    <constraint firstAttribute="width" constant="210" id="kqt-hE-SJl"/>
-                                </constraints>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="верх normal">
-                                            <attributes>
-                                                <color key="NSColor" red="0.331928104" green="1" blue="0.72543465149999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="16" name="HelveticaNeue"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <state key="selected">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="weewewewe">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="controlContent" size="11"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <state key="highlighted">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="3333">
-                                            <attributes>
-                                                <font key="NSFont" size="36" name=".AppleSystemUIFont"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.331928104" green="1" blue="0.72543465149999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfLines">
-                                        <integer key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="iconNormal" value="arrowNextDark"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="iconHighlighted" value="arrowNext"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="arrowNext"/>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pda-lx-4cn" customClass="AwesomeButton" customModule="AwesomeButton">
-                                <rect key="frame" x="20" y="109" width="158" height="54"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfS-ap-LBE" customClass="AwesomeButton" customModule="AwesomeButton">
+                                <rect key="frame" x="86" y="82" width="355" height="67"/>
                                 <color key="backgroundColor" red="1" green="0.3803921569" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="FE1-RD-Cy2"/>
-                                    <constraint firstAttribute="width" constant="158" id="MGj-uI-reN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Авторизоваться"/>
-                                <state key="selected" title="Выйти"/>
-                                <state key="highlighted" title="Войти"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.23764049449999999" green="1" blue="0.1023674851" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="29"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="iconNormal" value="arrowNextDark"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="iconHighlighted" value="arrowNext"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="arrowNext"/>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvm-0A-yfe" customClass="AwesomeButton" customModule="AwesomeButton">
-                                <rect key="frame" x="20" y="189" width="130" height="48"/>
-                                <color key="backgroundColor" red="1" green="0.3803921569" blue="0.99617239932885904" alpha="0.51196120689655178" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="WlB-9m-JXn"/>
-                                    <constraint firstAttribute="width" constant="130" id="fXv-J9-lPy"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="1" green="0.156934451" blue="0.15296358339999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <real key="value" value="32"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sh-52-dEw" customClass="AwesomeButton" customModule="AwesomeButton">
-                                <rect key="frame" x="20" y="272" width="138" height="47"/>
-                                <color key="backgroundColor" red="0.73725490199999999" green="0.75294117650000003" blue="0.76862745099999996" alpha="0.064412715517241384" colorSpace="calibratedRGB"/>
-                                <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="iconNormal" value="arrowNextDark"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="iconHighlighted" value="arrowNext"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconLeftRightPosition">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Pda-lx-4cn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="26Q-5i-dBQ"/>
-                            <constraint firstItem="Tvm-0A-yfe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2KD-DU-l6K"/>
-                            <constraint firstItem="Tvm-0A-yfe" firstAttribute="top" secondItem="Pda-lx-4cn" secondAttribute="bottom" constant="26" id="IW4-Za-dCL"/>
-                            <constraint firstItem="kfA-Bf-0Kt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="OSA-Pn-GC6"/>
-                            <constraint firstItem="Pda-lx-4cn" firstAttribute="top" secondItem="kfA-Bf-0Kt" secondAttribute="bottom" constant="35" id="Oxq-1Y-gWY"/>
-                            <constraint firstItem="kfA-Bf-0Kt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sBG-iv-56S"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="awesomeButton" destination="Pda-lx-4cn" id="iti-Gq-ILx"/>
-                        <outlet property="someButton" destination="Tvm-0A-yfe" id="4LY-cV-Pe0"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
