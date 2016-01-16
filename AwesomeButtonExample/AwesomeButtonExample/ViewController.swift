@@ -11,14 +11,18 @@ import AwesomeButton
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var buttonNew: AwesomeButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        buttonNew.iconPosition = .Right
+        /*
         let button = AwesomeButton(type: .Custom)
         button.frame = CGRectMake(10, 10, 200, 40)
         button.buttonWithIcon(UIImage(named: "example-arrow")!, highlightedImage: UIImage(named: "arrowNext"), selectedImage: UIImage(named: "arrowNextDark"), title: "lol")
         self.view.addSubview(button)
-
+        */
     }
 
     override func didReceiveMemoryWarning() {
