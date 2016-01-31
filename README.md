@@ -30,7 +30,7 @@ pod "AwesomeButton"
 
 ## Author
 
-Andrey Panov, apanov@avito.ru
+Andrey Panov, panovdev@gmail.com
 
 ## License
 
