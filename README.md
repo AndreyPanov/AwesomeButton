@@ -4,6 +4,9 @@
 [![Version](https://img.shields.io/cocoapods/v/AwesomeButton.svg?style=flat)](http://cocoapods.org/pods/AwesomeButton)
 [![License](https://img.shields.io/cocoapods/l/AwesomeButton.svg?style=flat)](http://cocoapods.org/pods/AwesomeButton)
 [![Platform](https://img.shields.io/cocoapods/p/AwesomeButton.svg?style=flat)](http://cocoapods.org/pods/AwesomeButton)
+
+AwesomeButton is an open source control with ability to add image and text just using Interface Builder.
+
 # Screenshot
 ![](/AwesomeButton.png)
 
