@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "AwesomeButton"
   s.version          = "0.1.0"
-  s.summary          = "A short description of AwesomeButton."
+  s.summary          = "UIButton inheritance with @IBDesignable and @IBInspectable force."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+AwesomeButton is an open source control with ability to add image and text just using Interface Builder. This control inheritance with @IBDesignable and @IBInspectable force. 
                        DESC
 
   s.homepage         = "https://github.com/AndreyPanov/AwesomeButton"
