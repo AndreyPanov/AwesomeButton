@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'AwesomeButton_Example', :exclusive => true do
+  pod 'AwesomeButton', :path => '../'
+end
+
+target 'AwesomeButton_Tests', :exclusive => true do
+  pod 'AwesomeButton', :path => '../'
+
+  
+end
