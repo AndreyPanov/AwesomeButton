@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "AwesomeButton"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "UIButton inheritance with @IBDesignable and @IBInspectable force."
 
 # This description is used to generate tags and improve search results.
