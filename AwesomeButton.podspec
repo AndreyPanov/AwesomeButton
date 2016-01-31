@@ -17,11 +17,10 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
-AwesomeButton is an open source control with ability to add image and text just using Interface Builder. This control inheritance with @IBDesignable and @IBInspectable force. 
+AwesomeButton is an open source control with ability to add image and text just using Interface Builder. This control inheritance with IBDesignable and IBInspectable force. 
                        DESC
 
   s.homepage         = "https://github.com/AndreyPanov/AwesomeButton"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Andrey Panov" => "panovdev@gmail.com" }
   s.source           = { :git => "https://github.com/AndreyPanov/AwesomeButton.git", :tag => s.version.to_s }
@@ -30,12 +29,11 @@ AwesomeButton is an open source control with ability to add image and text just 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/**/*'
+  s.source_files = 'Pod/Classes/**/*.swift'
   s.resource_bundles = {
     'AwesomeButton' => ['Pod/Assets/*.png']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  # s.frameworks = 'UIKit'
 end
