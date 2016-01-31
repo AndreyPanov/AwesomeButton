@@ -1,0 +1,782 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D58875BA1C772EB028556A3FB21E33F /* Pods-AwesomeButton_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C7432A3583E91E259D1210E367116184 /* Pods-AwesomeButton_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10875C2C1E32E95D661DE3000D9F529A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		464F6C25DC3EAB6E5BFA7696420BF94B /* AwesomeButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9888B91715A395DDA2DDEE03D536F31 /* AwesomeButton-dummy.m */; };
+		774FA2AD309CBCF4C0A0EEE9988E86E6 /* Pods-AwesomeButton_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7CA1FE11E79B7F739EB81DCCF2BB11 /* Pods-AwesomeButton_Example-dummy.m */; };
+		8A83171F632B13C8E6A87B0AE2CE068A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		971B36E09C3F2D5D0581BB6DB2678B61 /* AwesomeButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0055E0535DB4EFC61BA647D57FE28069 /* AwesomeButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B90AA59AE77943D6B0C0C9902025D132 /* AwesomeButton.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8B60E854F99753718E9A20644CBA2EE3 /* AwesomeButton.bundle */; };
+		D59ED0BF1C5E5BCE00E966F7 /* AwesomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59ED0BE1C5E5BCE00E966F7 /* AwesomeButton.swift */; };
+		E89953EDB8C2DD3C26B504B317E0C249 /* Pods-AwesomeButton_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 178BCBD53224F503CA784D97E958FDCA /* Pods-AwesomeButton_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA387E9642123458289D266A5AE302F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		F8C7B875B59083DBEFC59192CD27C99E /* Pods-AwesomeButton_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA05211E6DD990F7D7F4696185B5C6E /* Pods-AwesomeButton_Tests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7C8D39521769BA5B3BE886BDEF23EE1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD002A8CD38EDB3021922F949FC8081F;
+			remoteInfo = AwesomeButton;
+		};
+		7F7491E6003374581905A7D00C191153 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD002A8CD38EDB3021922F949FC8081F;
+			remoteInfo = AwesomeButton;
+		};
+		EEA5A9998BA5EED9C1CBB649E0554078 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE9A13C8ED4A21301925081C0F11347A;
+			remoteInfo = "AwesomeButton-AwesomeButton";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0055E0535DB4EFC61BA647D57FE28069 /* AwesomeButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AwesomeButton-umbrella.h"; sourceTree = "<group>"; };
+		00E6BD3ED5BF047082B54F98833D2921 /* Pods-AwesomeButton_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AwesomeButton_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		02F173FB2952B30DA5847A18313E52DF /* Pods-AwesomeButton_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AwesomeButton_Example-resources.sh"; sourceTree = "<group>"; };
+		04234C20FD7FC474E7C1A7C0BACB2242 /* Pods-AwesomeButton_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeButton_Example.release.xcconfig"; sourceTree = "<group>"; };
+		0560A5E76CFFEFB802DBABE29F73D582 /* Pods-AwesomeButton_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeButton_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		081C8836D52AB22739389E29D48D0589 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EFE90BCC0B6B77E8E936D0C0738358A /* Pods-AwesomeButton_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AwesomeButton_Tests-resources.sh"; sourceTree = "<group>"; };
+		178BCBD53224F503CA784D97E958FDCA /* Pods-AwesomeButton_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AwesomeButton_Example-umbrella.h"; sourceTree = "<group>"; };
+		1A403E7DA28E36FBE98E9F8B173E89ED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25D37577AEA404239DB9E1F3B61D765B /* Pods-AwesomeButton_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeButton_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		28DFED84F75172F64A9D398AC29C29E9 /* Pods_AwesomeButton_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomeButton_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3257C83DF9BEEFE3DEBFB1AC7D8F1A13 /* Pods-AwesomeButton_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AwesomeButton_Example-frameworks.sh"; sourceTree = "<group>"; };
+		3634AED5141631AB47DB468FA25D973F /* Pods-AwesomeButton_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-AwesomeButton_Tests.modulemap"; sourceTree = "<group>"; };
+		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		55F63BC38E6050DFD2AA3E1FC8343F70 /* Pods_AwesomeButton_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomeButton_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		586F841851FCF092CD31003717FB0B59 /* Pods-AwesomeButton_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeButton_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		737FA5E94BC8F228490268457EAAD6CD /* Pods-AwesomeButton_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeButton_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		7600C5708204E3D7CAD0D60B30CF93D2 /* AwesomeButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AwesomeButton.modulemap; sourceTree = "<group>"; };
+		7C7CA1FE11E79B7F739EB81DCCF2BB11 /* Pods-AwesomeButton_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AwesomeButton_Example-dummy.m"; sourceTree = "<group>"; };
+		8B60E854F99753718E9A20644CBA2EE3 /* AwesomeButton.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeButton.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B86A28AC89E6574DE5F8523A8D32B23 /* AwesomeButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AwesomeButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CAFEE56523277A2D78CB01467E14D4A /* AwesomeButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AwesomeButton.xcconfig; sourceTree = "<group>"; };
+		B24D7B21CD97EFF5DE9A964731C83E71 /* Pods-AwesomeButton_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-AwesomeButton_Example.modulemap"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C5157ADAEB097BF8BB3B89712DAB2BF0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7432A3583E91E259D1210E367116184 /* Pods-AwesomeButton_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AwesomeButton_Tests-umbrella.h"; sourceTree = "<group>"; };
+		D39759E0A9202CE2C658A315C334832E /* Pods-AwesomeButton_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AwesomeButton_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D397DF964C53BA256E65D6BBA7935C19 /* Pods-AwesomeButton_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeButton_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D59ED0BE1C5E5BCE00E966F7 /* AwesomeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeButton.swift; sourceTree = "<group>"; };
+		E9888B91715A395DDA2DDEE03D536F31 /* AwesomeButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AwesomeButton-dummy.m"; sourceTree = "<group>"; };
+		EFA05211E6DD990F7D7F4696185B5C6E /* Pods-AwesomeButton_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AwesomeButton_Tests-dummy.m"; sourceTree = "<group>"; };
+		F0FE82F52E07D32E52A8F643ED04733A /* Pods-AwesomeButton_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AwesomeButton_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		F7C3829A0ADBC1753260350D34EE04BA /* AwesomeButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AwesomeButton-prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E1B6BA0C53652659D62B2A9DFBEEC1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		283078E64082B33E82CEB798B8E96D25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10875C2C1E32E95D661DE3000D9F529A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DA775E9FEE608E0EE69D3857364D126 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA387E9642123458289D266A5AE302F5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D04F51ED5E24070DFBAD6BA03AFC4567 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A83171F632B13C8E6A87B0AE2CE068A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16370B45A61648398632779485D35A11 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				574451789694C22579C30474072B8288 /* Pods-AwesomeButton_Example */,
+				624641A7F8A00B50E4204FA2430C17FD /* Pods-AwesomeButton_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		574451789694C22579C30474072B8288 /* Pods-AwesomeButton_Example */ = {
+			isa = PBXGroup;
+			children = (
+				081C8836D52AB22739389E29D48D0589 /* Info.plist */,
+				B24D7B21CD97EFF5DE9A964731C83E71 /* Pods-AwesomeButton_Example.modulemap */,
+				00E6BD3ED5BF047082B54F98833D2921 /* Pods-AwesomeButton_Example-acknowledgements.markdown */,
+				737FA5E94BC8F228490268457EAAD6CD /* Pods-AwesomeButton_Example-acknowledgements.plist */,
+				7C7CA1FE11E79B7F739EB81DCCF2BB11 /* Pods-AwesomeButton_Example-dummy.m */,
+				3257C83DF9BEEFE3DEBFB1AC7D8F1A13 /* Pods-AwesomeButton_Example-frameworks.sh */,
+				02F173FB2952B30DA5847A18313E52DF /* Pods-AwesomeButton_Example-resources.sh */,
+				178BCBD53224F503CA784D97E958FDCA /* Pods-AwesomeButton_Example-umbrella.h */,
+				D397DF964C53BA256E65D6BBA7935C19 /* Pods-AwesomeButton_Example.debug.xcconfig */,
+				04234C20FD7FC474E7C1A7C0BACB2242 /* Pods-AwesomeButton_Example.release.xcconfig */,
+			);
+			name = "Pods-AwesomeButton_Example";
+			path = "Target Support Files/Pods-AwesomeButton_Example";
+			sourceTree = "<group>";
+		};
+		624641A7F8A00B50E4204FA2430C17FD /* Pods-AwesomeButton_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1A403E7DA28E36FBE98E9F8B173E89ED /* Info.plist */,
+				3634AED5141631AB47DB468FA25D973F /* Pods-AwesomeButton_Tests.modulemap */,
+				D39759E0A9202CE2C658A315C334832E /* Pods-AwesomeButton_Tests-acknowledgements.markdown */,
+				586F841851FCF092CD31003717FB0B59 /* Pods-AwesomeButton_Tests-acknowledgements.plist */,
+				EFA05211E6DD990F7D7F4696185B5C6E /* Pods-AwesomeButton_Tests-dummy.m */,
+				F0FE82F52E07D32E52A8F643ED04733A /* Pods-AwesomeButton_Tests-frameworks.sh */,
+				0EFE90BCC0B6B77E8E936D0C0738358A /* Pods-AwesomeButton_Tests-resources.sh */,
+				C7432A3583E91E259D1210E367116184 /* Pods-AwesomeButton_Tests-umbrella.h */,
+				0560A5E76CFFEFB802DBABE29F73D582 /* Pods-AwesomeButton_Tests.debug.xcconfig */,
+				25D37577AEA404239DB9E1F3B61D765B /* Pods-AwesomeButton_Tests.release.xcconfig */,
+			);
+			name = "Pods-AwesomeButton_Tests";
+			path = "Target Support Files/Pods-AwesomeButton_Tests";
+			sourceTree = "<group>";
+		};
+		626B690FEF9C8F741AC919490A2D4994 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D59ED0BE1C5E5BCE00E966F7 /* AwesomeButton.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		760FF4D741997E83B44D681FCAA0E76D /* AwesomeButton */ = {
+			isa = PBXGroup;
+			children = (
+				7D462F5C23E304FA1B7079AA271E853F /* Pod */,
+				872131D477F7AA5D39A2BB6EDF63AF72 /* Support Files */,
+			);
+			name = AwesomeButton;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		7D462F5C23E304FA1B7079AA271E853F /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				626B690FEF9C8F741AC919490A2D4994 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				AC7570469A83638AF154D2FA18718756 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				8BD8784F0A72BFB66DEAD549658F4E87 /* Products */,
+				16370B45A61648398632779485D35A11 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		872131D477F7AA5D39A2BB6EDF63AF72 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7600C5708204E3D7CAD0D60B30CF93D2 /* AwesomeButton.modulemap */,
+				9CAFEE56523277A2D78CB01467E14D4A /* AwesomeButton.xcconfig */,
+				E9888B91715A395DDA2DDEE03D536F31 /* AwesomeButton-dummy.m */,
+				F7C3829A0ADBC1753260350D34EE04BA /* AwesomeButton-prefix.pch */,
+				0055E0535DB4EFC61BA647D57FE28069 /* AwesomeButton-umbrella.h */,
+				C5157ADAEB097BF8BB3B89712DAB2BF0 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/AwesomeButton";
+			sourceTree = "<group>";
+		};
+		8BD8784F0A72BFB66DEAD549658F4E87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B60E854F99753718E9A20644CBA2EE3 /* AwesomeButton.bundle */,
+				8B86A28AC89E6574DE5F8523A8D32B23 /* AwesomeButton.framework */,
+				28DFED84F75172F64A9D398AC29C29E9 /* Pods_AwesomeButton_Example.framework */,
+				55F63BC38E6050DFD2AA3E1FC8343F70 /* Pods_AwesomeButton_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC7570469A83638AF154D2FA18718756 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				760FF4D741997E83B44D681FCAA0E76D /* AwesomeButton */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		49011AE666749396CD93F9B806795084 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D58875BA1C772EB028556A3FB21E33F /* Pods-AwesomeButton_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B8228AC70041FA821CC64B84ADDFEB3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E89953EDB8C2DD3C26B504B317E0C249 /* Pods-AwesomeButton_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEE58ACEB0A65DD8494A059A050AFE9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				971B36E09C3F2D5D0581BB6DB2678B61 /* AwesomeButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BD002A8CD38EDB3021922F949FC8081F /* AwesomeButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E8B63F7BB8F6E911E0811BA09BDDCF3 /* Build configuration list for PBXNativeTarget "AwesomeButton" */;
+			buildPhases = (
+				B640336965446412B4AE1C31EA4B0F5D /* Sources */,
+				283078E64082B33E82CEB798B8E96D25 /* Frameworks */,
+				968FC992BA4FEBB273E32D2AD2A24E2E /* Resources */,
+				BFEE58ACEB0A65DD8494A059A050AFE9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59AB41EC0A1E16E095C4FA070E685B0D /* PBXTargetDependency */,
+			);
+			name = AwesomeButton;
+			productName = AwesomeButton;
+			productReference = 8B86A28AC89E6574DE5F8523A8D32B23 /* AwesomeButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BE9A13C8ED4A21301925081C0F11347A /* AwesomeButton-AwesomeButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91E139B02083829D418EE8186FF87ED0 /* Build configuration list for PBXNativeTarget "AwesomeButton-AwesomeButton" */;
+			buildPhases = (
+				25BEC69E4F0492542C30905E08AF96C9 /* Sources */,
+				0E1B6BA0C53652659D62B2A9DFBEEC1E /* Frameworks */,
+				23A9608ED2EA7173247CA49B9B7CF1E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AwesomeButton-AwesomeButton";
+			productName = "AwesomeButton-AwesomeButton";
+			productReference = 8B60E854F99753718E9A20644CBA2EE3 /* AwesomeButton.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		C42CE71440B0D669C0B06173BABDDC9F /* Pods-AwesomeButton_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDCEA0D4B0906EB6088EF3B4076E7896 /* Build configuration list for PBXNativeTarget "Pods-AwesomeButton_Example" */;
+			buildPhases = (
+				40A674FCC2BEF1174091C54F95A2622D /* Sources */,
+				D04F51ED5E24070DFBAD6BA03AFC4567 /* Frameworks */,
+				8B8228AC70041FA821CC64B84ADDFEB3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4ABB88E12F5D18A4E49D0B3AFABE42AA /* PBXTargetDependency */,
+			);
+			name = "Pods-AwesomeButton_Example";
+			productName = "Pods-AwesomeButton_Example";
+			productReference = 28DFED84F75172F64A9D398AC29C29E9 /* Pods_AwesomeButton_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E247A64CC2A737AD4B9E8733D8BA6AF1 /* Pods-AwesomeButton_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C6E29A9999F6073F5C0E9CCAD44792E /* Build configuration list for PBXNativeTarget "Pods-AwesomeButton_Tests" */;
+			buildPhases = (
+				CD2CB3A838CD56E75E04695A4F2E1622 /* Sources */,
+				7DA775E9FEE608E0EE69D3857364D126 /* Frameworks */,
+				49011AE666749396CD93F9B806795084 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FBF0B056A3BD8E419DF5D70FBF089E2 /* PBXTargetDependency */,
+			);
+			name = "Pods-AwesomeButton_Tests";
+			productName = "Pods-AwesomeButton_Tests";
+			productReference = 55F63BC38E6050DFD2AA3E1FC8343F70 /* Pods_AwesomeButton_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 8BD8784F0A72BFB66DEAD549658F4E87 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD002A8CD38EDB3021922F949FC8081F /* AwesomeButton */,
+				BE9A13C8ED4A21301925081C0F11347A /* AwesomeButton-AwesomeButton */,
+				C42CE71440B0D669C0B06173BABDDC9F /* Pods-AwesomeButton_Example */,
+				E247A64CC2A737AD4B9E8733D8BA6AF1 /* Pods-AwesomeButton_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		23A9608ED2EA7173247CA49B9B7CF1E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		968FC992BA4FEBB273E32D2AD2A24E2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B90AA59AE77943D6B0C0C9902025D132 /* AwesomeButton.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25BEC69E4F0492542C30905E08AF96C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40A674FCC2BEF1174091C54F95A2622D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				774FA2AD309CBCF4C0A0EEE9988E86E6 /* Pods-AwesomeButton_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B640336965446412B4AE1C31EA4B0F5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				464F6C25DC3EAB6E5BFA7696420BF94B /* AwesomeButton-dummy.m in Sources */,
+				D59ED0BF1C5E5BCE00E966F7 /* AwesomeButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD2CB3A838CD56E75E04695A4F2E1622 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8C7B875B59083DBEFC59192CD27C99E /* Pods-AwesomeButton_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4ABB88E12F5D18A4E49D0B3AFABE42AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AwesomeButton;
+			target = BD002A8CD38EDB3021922F949FC8081F /* AwesomeButton */;
+			targetProxy = 7F7491E6003374581905A7D00C191153 /* PBXContainerItemProxy */;
+		};
+		59AB41EC0A1E16E095C4FA070E685B0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AwesomeButton-AwesomeButton";
+			target = BE9A13C8ED4A21301925081C0F11347A /* AwesomeButton-AwesomeButton */;
+			targetProxy = EEA5A9998BA5EED9C1CBB649E0554078 /* PBXContainerItemProxy */;
+		};
+		5FBF0B056A3BD8E419DF5D70FBF089E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AwesomeButton;
+			target = BD002A8CD38EDB3021922F949FC8081F /* AwesomeButton */;
+			targetProxy = 7C8D39521769BA5B3BE886BDEF23EE1D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1C4BCC8B00A4D7E6F9F8AFB890B83FC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CAFEE56523277A2D78CB01467E14D4A /* AwesomeButton.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AwesomeButton/AwesomeButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AwesomeButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AwesomeButton/AwesomeButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AwesomeButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		228B4F47B348A47E29F7D9AE1DFA9C66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0560A5E76CFFEFB802DBABE29F73D582 /* Pods-AwesomeButton_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AwesomeButton_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AwesomeButton_Tests/Pods-AwesomeButton_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_AwesomeButton_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3E30D06932FDA3DF74D06CABB8FC87D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04234C20FD7FC474E7C1A7C0BACB2242 /* Pods-AwesomeButton_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AwesomeButton_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AwesomeButton_Example/Pods-AwesomeButton_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_AwesomeButton_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		552D02D5BA751AC2E8790D2811D496CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5C80729E702EC7423449B482992D8C0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D397DF964C53BA256E65D6BBA7935C19 /* Pods-AwesomeButton_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AwesomeButton_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AwesomeButton_Example/Pods-AwesomeButton_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_AwesomeButton_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9C302CE4852377C5453AFB551CFD2033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CAFEE56523277A2D78CB01467E14D4A /* AwesomeButton.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = AwesomeButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		A74FC5CAD02BE57AB46A2C903F338472 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CAFEE56523277A2D78CB01467E14D4A /* AwesomeButton.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = AwesomeButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		B3F8DF0B9E6D60EDD5C78C3A0218A2C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CAFEE56523277A2D78CB01467E14D4A /* AwesomeButton.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AwesomeButton/AwesomeButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AwesomeButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AwesomeButton/AwesomeButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AwesomeButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EFA71D3BF1F78EBB1F756020FAB255B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25D37577AEA404239DB9E1F3B61D765B /* Pods-AwesomeButton_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AwesomeButton_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AwesomeButton_Tests/Pods-AwesomeButton_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_AwesomeButton_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				552D02D5BA751AC2E8790D2811D496CA /* Debug */,
+				10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C6E29A9999F6073F5C0E9CCAD44792E /* Build configuration list for PBXNativeTarget "Pods-AwesomeButton_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				228B4F47B348A47E29F7D9AE1DFA9C66 /* Debug */,
+				EFA71D3BF1F78EBB1F756020FAB255B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91E139B02083829D418EE8186FF87ED0 /* Build configuration list for PBXNativeTarget "AwesomeButton-AwesomeButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C302CE4852377C5453AFB551CFD2033 /* Debug */,
+				A74FC5CAD02BE57AB46A2C903F338472 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E8B63F7BB8F6E911E0811BA09BDDCF3 /* Build configuration list for PBXNativeTarget "AwesomeButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3F8DF0B9E6D60EDD5C78C3A0218A2C7 /* Debug */,
+				1C4BCC8B00A4D7E6F9F8AFB890B83FC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDCEA0D4B0906EB6088EF3B4076E7896 /* Build configuration list for PBXNativeTarget "Pods-AwesomeButton_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C80729E702EC7423449B482992D8C0B /* Debug */,
+				3E30D06932FDA3DF74D06CABB8FC87D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -1,0 +1,14 @@
+PODS:
+  - AwesomeButton (0.1.0)
+
+DEPENDENCIES:
+  - AwesomeButton (from `../`)
+
+EXTERNAL SOURCES:
+  AwesomeButton:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AwesomeButton: caa80b7443913bcb1e974b98648062d3dda9ca07
+
+COCOAPODS: 0.39.0

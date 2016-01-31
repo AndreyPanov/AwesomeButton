@@ -4,6 +4,14 @@
 [![Version](https://img.shields.io/cocoapods/v/AwesomeButton.svg?style=flat)](http://cocoapods.org/pods/AwesomeButton)
 [![License](https://img.shields.io/cocoapods/l/AwesomeButton.svg?style=flat)](http://cocoapods.org/pods/AwesomeButton)
 [![Platform](https://img.shields.io/cocoapods/p/AwesomeButton.svg?style=flat)](http://cocoapods.org/pods/AwesomeButton)
+# Screenshot
+![](/AwesomeButton.png)
+
+# Add
+
+1. add button in interface builder 
+2. set type in «custom» (it’s really important).
+3. set different icons, corner radius, border width and color, etc
 
 ## Usage
 

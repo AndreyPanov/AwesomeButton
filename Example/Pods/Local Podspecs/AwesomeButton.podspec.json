@@ -1,0 +1,25 @@
+{
+  "name": "AwesomeButton",
+  "version": "0.1.0",
+  "summary": "A short description of AwesomeButton.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/AwesomeButton",
+  "license": "MIT",
+  "authors": {
+    "Andrey Panov": "apanov@avito.ru"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/AwesomeButton.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "AwesomeButton": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}
