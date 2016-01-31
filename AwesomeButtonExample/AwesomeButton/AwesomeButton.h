@@ -2,8 +2,8 @@
 //  AwesomeButton.h
 //  AwesomeButton
 //
-//  Created by Панов Андрей on 26.12.15.
-//  Copyright © 2015 Панов Андрей. All rights reserved.
+//  Created by Andrey Panov on 26.12.15.
+//  Copyright © 2015 Andrey Panov. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

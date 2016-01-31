@@ -1,10 +1,25 @@
 //
 //  AwesomeButton.swift
-//  AwesomeButtonExample
 //
-//  Created by Панов Андрей on 26.12.15.
-//  Copyright © 2015 Панов Андрей. All rights reserved.
+//  Created by Andrey Panov on 26.12.15.
+//  Copyright © 2015 Andrey Panov. All rights reserved.
 //
+//    Permission is hereby granted, free of charge, to any person obtaining a copy of
+//    this software and associated documentation files (the "Software"), to deal in
+//    the Software without restriction, including without limitation the rights to
+//    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+//    the Software, and to permit persons to whom the Software is furnished to do so,
+//    subject to the following conditions:
+//
+//    The above copyright notice and this permission notice shall be included in all
+//    copies or substantial portions of the Software.
+//
+//    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+//    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+//    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+//    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+//    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import UIKit
 
@@ -18,6 +33,9 @@ private struct ButtonStyle {
         static let normal = CGFloat(1.0)
         static let highlighted = CGFloat(0.7)
         static let disabled = CGFloat(0.5)
+    }
+    struct AttributedStringStyles {
+        static let Spacing: CGFloat = 1.2
     }
     static let cornerRadius: CGFloat = 5.0
     static let borderWidth: CGFloat = 3.0
@@ -96,6 +114,7 @@ public class AwesomeButton: UIButton {
             }
         }
     }
+    public var textSpacing: CGFloat = ButtonStyle.AttributedStringStyles.Spacing
     // store design
     private var iconAttachments: [UInt : NSAttributedString] = [:]
     private var attributedStrings: [UInt : NSAttributedString] = [:]
@@ -161,7 +180,7 @@ private extension AwesomeButton {
         // order of if--else statement is important here
         if let titleUnwrapped = titleForState(buttonState), let fontUnwrapped = titleLabel?.font, let textColor = titleColorForState(buttonState) {
             
-            return NSAttributedString(string: titleUnwrapped, attributes: [NSFontAttributeName : fontUnwrapped, NSForegroundColorAttributeName : textColor])
+            return NSAttributedString(string: titleUnwrapped, attributes: [NSFontAttributeName : fontUnwrapped, NSForegroundColorAttributeName : textColor, NSKernAttributeName : ButtonStyle.AttributedStringStyles.Spacing])
         }
         else if let attributedTitleUnwrapped = attributedTitleForState(buttonState) {
             
@@ -225,7 +244,7 @@ private extension NSAttributedString {
         let limitRange = NSMakeRange(0, self.length)
         if let font = self.attribute(NSFontAttributeName, atIndex: 0, longestEffectiveRange: nil, inRange: limitRange) {
             
-            return [NSFontAttributeName : font]
+            return [NSFontAttributeName : font, NSKernAttributeName : ButtonStyle.AttributedStringStyles.Spacing]
         }
         return [:]
     }
@@ -242,4 +261,6 @@ private extension NSAttributedString {
         if let font = (self.fontAttributes()[NSFontAttributeName]) { return font.descender + font.capHeight }
         return 0.0
     }
+    
+    
 }
