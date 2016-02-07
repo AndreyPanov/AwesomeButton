@@ -16,10 +16,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // image only
         let button = AwesomeButton(type: .Custom)
-        button.frame = CGRectMake(10, 100, 200, 40)
+        button.frame = CGRectMake(10, 200, 200, 40)
         button.buttonWithIcon(UIImage(named: "example-arrow")!, highlightedImage: UIImage(named: "arrowNextDark"), title: "loadadl")
         self.view.addSubview(button)
+
     }
 
     override func didReceiveMemoryWarning() {
