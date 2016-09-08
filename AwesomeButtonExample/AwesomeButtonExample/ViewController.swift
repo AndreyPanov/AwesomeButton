@@ -17,8 +17,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // image only
-        let button = AwesomeButton(type: .Custom)
-        button.frame = CGRectMake(10, 200, 200, 40)
+        let button = AwesomeButton(type: .custom)
+        button.frame = CGRect(x: 10, y: 200, width: 200, height: 40)
         button.buttonWithIcon(UIImage(named: "example-arrow")!, highlightedImage: UIImage(named: "arrowNextDark"), title: "loadadl")
         self.view.addSubview(button)
 

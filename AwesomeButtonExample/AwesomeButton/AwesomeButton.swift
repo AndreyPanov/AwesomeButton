@@ -24,7 +24,7 @@
 import UIKit
 
 public enum ImagePosition {
-    case Left, Right
+    case left, right
 }
 
 private struct ButtonStyle {
@@ -39,92 +39,92 @@ private struct ButtonStyle {
     }
     static let cornerRadius: CGFloat = 5.0
     static let borderWidth: CGFloat = 3.0
-    static let borderColor: UIColor = UIColor.lightGrayColor()
+    static let borderColor: UIColor = UIColor.lightGray
     static let iconYOffset: CGFloat = 0.0
 }
 
 @IBDesignable
-public class AwesomeButton: UIButton {
+open class AwesomeButton: UIButton {
     
     //MARK: Designable
     
-    @IBInspectable public var iconNormal: UIImage? {
+    @IBInspectable open var iconNormal: UIImage? {
         
-        didSet { iconConfiguration(iconNormal, iconState: .Normal) }
+        didSet { iconConfiguration(iconNormal, iconState: UIControlState()) }
     }
-    @IBInspectable public var iconHighlighted: UIImage? {
+    @IBInspectable open var iconHighlighted: UIImage? {
         
-        didSet { iconConfiguration(iconHighlighted, iconState: .Highlighted) }
+        didSet { iconConfiguration(iconHighlighted, iconState: .highlighted) }
     }
-    @IBInspectable public var iconSelected: UIImage? {
+    @IBInspectable open var iconSelected: UIImage? {
         
-        didSet { iconConfiguration(iconSelected, iconState: .Selected) }
+        didSet { iconConfiguration(iconSelected, iconState: .selected) }
     }
-    @IBInspectable public var cornerRadius: CGFloat = ButtonStyle.cornerRadius {
+    @IBInspectable open var cornerRadius: CGFloat = ButtonStyle.cornerRadius {
         didSet {
             layer.cornerRadius = cornerRadius
             layer.masksToBounds = cornerRadius > 0
         }
     }
-    @IBInspectable public var borderWidth: CGFloat = ButtonStyle.borderWidth {
+    @IBInspectable open var borderWidth: CGFloat = ButtonStyle.borderWidth {
         
         didSet { layer.borderWidth = borderWidth }
     }
-    @IBInspectable public var borderColor: UIColor = ButtonStyle.borderColor {
+    @IBInspectable open var borderColor: UIColor = ButtonStyle.borderColor {
         
-        didSet { layer.borderColor = borderColor.CGColor }
+        didSet { layer.borderColor = borderColor.cgColor }
     }
     
-    @IBInspectable public var iconYOffset: CGFloat = ButtonStyle.iconYOffset {
+    @IBInspectable open var iconYOffset: CGFloat = ButtonStyle.iconYOffset {
         
         didSet { setNewYOffset() }
     }
     
     //MARK: Public
     
-    public var iconPosition: ImagePosition = .Right {
+    open var iconPosition: ImagePosition = .right {
         didSet {
             switchIconAndTextPosition()
         }
     }
-    public override var highlighted: Bool {
+    open override var isHighlighted: Bool {
         didSet {
-            if highlighted {
-                backgroundColor = backgroundColor?.colorWithAlphaComponent(ButtonStyle.StateAlpha.highlighted)
+            if isHighlighted {
+                backgroundColor = backgroundColor?.withAlphaComponent(ButtonStyle.StateAlpha.highlighted)
             } else {
-                backgroundColor = backgroundColor?.colorWithAlphaComponent(ButtonStyle.StateAlpha.normal)
+                backgroundColor = backgroundColor?.withAlphaComponent(ButtonStyle.StateAlpha.normal)
             }
         }
     }
-    public override var selected: Bool {
+    open override var isSelected: Bool {
         didSet {
-            if selected {
-                backgroundColor = backgroundColor?.colorWithAlphaComponent(ButtonStyle.StateAlpha.highlighted)
+            if isSelected {
+                backgroundColor = backgroundColor?.withAlphaComponent(ButtonStyle.StateAlpha.highlighted)
             } else {
-                backgroundColor = backgroundColor?.colorWithAlphaComponent(ButtonStyle.StateAlpha.normal)
+                backgroundColor = backgroundColor?.withAlphaComponent(ButtonStyle.StateAlpha.normal)
             }
         }
     }
-    public override var enabled: Bool {
+    open override var isEnabled: Bool {
         didSet {
-            if enabled {
-                backgroundColor = backgroundColor?.colorWithAlphaComponent(ButtonStyle.StateAlpha.normal)
+            if isEnabled {
+                backgroundColor = backgroundColor?.withAlphaComponent(ButtonStyle.StateAlpha.normal)
             } else {
-                backgroundColor = backgroundColor?.colorWithAlphaComponent(ButtonStyle.StateAlpha.disabled)
+                backgroundColor = backgroundColor?.withAlphaComponent(ButtonStyle.StateAlpha.disabled)
             }
         }
     }
-    public var textSpacing: CGFloat = ButtonStyle.AttributedStringStyles.Spacing
+    open var textSpacing: CGFloat = ButtonStyle.AttributedStringStyles.Spacing
     // store design
-    private var iconAttachments: [UInt : NSAttributedString] = [:]
-    private var attributedStrings: [UInt : NSAttributedString] = [:]
+    fileprivate var iconAttachments: [UInt : NSAttributedString] = [:]
+    fileprivate var attributedStrings: [UInt : NSAttributedString] = [:]
     
-    public override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
-        contentVerticalAlignment = .Center
+        contentVerticalAlignment = .center
     }
-    public func buttonWithIcon(icon: UIImage, highlightedImage: UIImage? = nil, selectedImage: UIImage? = nil, iconPosition: ImagePosition = .Left, title: String = "") {
-        setTitle(title, forState: .Normal)
+    open func buttonWithIcon(_ icon: UIImage, highlightedImage: UIImage? = nil, selectedImage: UIImage? = nil, iconPosition: ImagePosition = .left, title: String = "") {
+        setTitle(title, for: UIControlState())
         self.iconPosition = iconPosition
         iconNormal = icon
         iconHighlighted = highlightedImage
@@ -134,7 +134,7 @@ public class AwesomeButton: UIButton {
 
 private extension AwesomeButton {
     
-    func iconConfiguration(icon: UIImage?, iconState: UIControlState) {
+    func iconConfiguration(_ icon: UIImage?, iconState: UIControlState) {
         
         guard let iconUnwrapped = icon else { return }
         
@@ -148,41 +148,41 @@ private extension AwesomeButton {
         
         guard ((attributedStrings.isEmpty == false) || (iconAttachments.isEmpty == false)) else { return }
         
-        [UIControlState.Normal, UIControlState.Highlighted, UIControlState.Selected].forEach({ stateButton in
+        [UIControlState.highlighted, UIControlState.selected].forEach({ stateButton in
             
             configurateAttributedStringWithState(stateButton)
         })
     }
     
-    func configurateAttributedStringWithState(state: UIControlState) {
+    func configurateAttributedStringWithState(_ state: UIControlState) {
         
         let finalString = NSMutableAttributedString(string: "")
         
         if let attachmentString = iconAttachments[state.rawValue],
             let attributedString = attributedStrings[state.rawValue] {
                 
-                if iconPosition == .Left {
-                    finalString.appendAttributedString(attachmentString)
-                    finalString.appendAttributedString(attributedString)
+                if iconPosition == .left {
+                    finalString.append(attachmentString)
+                    finalString.append(attributedString)
                     print("Left set for state \(state)")
                 }
-                else if iconPosition == .Right {
-                    finalString.appendAttributedString(attributedString)
-                    finalString.appendAttributedString(attachmentString)
+                else if iconPosition == .right {
+                    finalString.append(attributedString)
+                    finalString.append(attachmentString)
                     print("Right set for state \(state)")
                 }
-                setAttributedTitle(finalString, forState: state)
+                setAttributedTitle(finalString, for: state)
         }
     }
     
-    func getAttributedStringForState(buttonState: UIControlState) -> NSAttributedString {
+    func getAttributedStringForState(_ buttonState: UIControlState) -> NSAttributedString {
         
         // order of if--else statement is important here
-        if let titleUnwrapped = titleForState(buttonState), let fontUnwrapped = titleLabel?.font, let textColor = titleColorForState(buttonState) {
+        if let titleUnwrapped = title(for: buttonState), let fontUnwrapped = titleLabel?.font, let textColor = titleColor(for: buttonState) {
             
             return NSAttributedString(string: titleUnwrapped, attributes: [NSFontAttributeName : fontUnwrapped, NSForegroundColorAttributeName : textColor, NSKernAttributeName : ButtonStyle.AttributedStringStyles.Spacing])
         }
-        else if let attributedTitleUnwrapped = attributedTitleForState(buttonState) {
+        else if let attributedTitleUnwrapped = attributedTitle(for: buttonState) {
             
             return NSAttributedString(string: attributedTitleUnwrapped.string, attributes: attributedTitleUnwrapped.fontAttributes())
         }
@@ -191,21 +191,21 @@ private extension AwesomeButton {
         }
     }
     
-    func getImageForState(state: UIControlState) -> UIImage? {
+    func getImageForState(_ state: UIControlState) -> UIImage? {
         
         switch (state) {
-        case UIControlState.Normal:
+        case UIControlState():
             return iconNormal
-        case UIControlState.Highlighted:
+        case UIControlState.highlighted:
             return iconHighlighted
-        case UIControlState.Selected:
+        case UIControlState.selected:
             return iconSelected
         default:
             return nil
         }
     }
     
-    func calculateOffsetYForState(state: UIControlState) -> CGFloat {
+    func calculateOffsetYForState(_ state: UIControlState) -> CGFloat {
         
         guard let imageHeight = getImageForState(state)?.size.height else { return 0.0 }
         
@@ -219,17 +219,17 @@ private extension AwesomeButton {
         return imageOffsetY + iconYOffset
     }
     
-    func getAttachmentStringWithImage(icon: UIImage, iconState: UIControlState) -> NSAttributedString {
+    func getAttachmentStringWithImage(_ icon: UIImage, iconState: UIControlState) -> NSAttributedString {
         
         let attachment = NSTextAttachment()
         attachment.image = icon
-        attachment.bounds = CGRectIntegral(CGRectMake(0, calculateOffsetYForState(iconState), icon.size.width, icon.size.height))
+        attachment.bounds = CGRect(x: 0, y: calculateOffsetYForState(iconState), width: icon.size.width, height: icon.size.height).integral
         return NSAttributedString(attachment: attachment)
     }
     
     func setNewYOffset() {
         
-        [UIControlState.Normal, UIControlState.Highlighted, UIControlState.Selected].forEach({ stateButton in
+        [UIControlState.highlighted, UIControlState.selected].forEach({ stateButton in
             
             if let image =  getImageForState(stateButton) {
                 iconConfiguration(image, iconState: stateButton)
@@ -242,9 +242,9 @@ private extension NSAttributedString {
     
     func fontAttributes() -> [String : AnyObject] {
         let limitRange = NSMakeRange(0, self.length)
-        if let font = self.attribute(NSFontAttributeName, atIndex: 0, longestEffectiveRange: nil, inRange: limitRange) {
+        if let font = self.attribute(NSFontAttributeName, at: 0, longestEffectiveRange: nil, in: limitRange) {
             
-            return [NSFontAttributeName : font, NSKernAttributeName : ButtonStyle.AttributedStringStyles.Spacing]
+            return [NSFontAttributeName : font as AnyObject, NSKernAttributeName : ButtonStyle.AttributedStringStyles.Spacing as AnyObject]
         }
         return [:]
     }
